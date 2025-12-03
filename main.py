@@ -12,13 +12,22 @@
 # - Item requested  
 # - Quantity requested  
 
-# All requests must be stored together in one organized system.
-student_request= []
-student_name = input("What is the students name?")
-item_requested = input("What is the item requested?")
-quantity = int(input("how many?"))
+student_request = []
 
-``
+student_name = input("What is the student's name? ")
+item_requested = input("What is the item requested? ")
+quantity = int(input("How many? "))
+
+request = {
+    "name": student_name,
+    "item": item_requested,
+    "quantity": quantity
+}
+
+student_request.append(request)
+
+print("Request added:")
+print(student_request)
 ## Student Tasks (No Coding – Logic Only)
 
 ### 1. Create Student Requests
