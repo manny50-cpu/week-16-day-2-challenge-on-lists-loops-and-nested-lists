@@ -43,11 +43,18 @@ print(student_request)
 # - Identify the **first student’s name**
 # - Identify the **last student’s requested item only**
 
+first_student_name = student_requests[0]["name"]
+last_student_item = student_requests[-1]["item"]
+
+print("First student's name:", first_student_name)
+print("Last student's requested item:", last_student_item)
+
 # ---
 
 # ### 3. Quantity Extraction
 # Create a **separate list that contains only the quantities requested** by the students.
-
+quantities = [req["quantity"] for req in student_requests]
+print("Quantities:", quantities)
 # ---
 
 # ### 4. Order Size Analysis
@@ -56,12 +63,16 @@ print(student_request)
 #   “Large order detected!”
 # - Otherwise label the order:
 #   “Orders within normal limits.”
-
+if any(q > 5 for q in quantities):
+    print("Large order detected!")
+else:
+    print("Orders within normal limits.")
 # ---
 
 # ### 5. Quantity Organization
 # Re-organize the quantity list from **smallest to largest** and display the final result.
-
+quantities_sorted = sorted(quantities)
+print("Quantities sorted:", quantities_sorted)
 # ---
 
 # ## Challenge Extension: Classroom Storage Grid
